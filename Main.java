@@ -1,14 +1,22 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        char[] tablica1 = {'a', 'b', 'c', 'd', 'e'};
-        char[] tablica2 = {'c', 'd', 'e', 'f', 'g'};
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Podaj elementy 1 tablicy oddzielając je spacją: ");
+        String input1 = scanner.nextLine();
+        char[] tablica1 = input1.toCharArray();
+
+        System.out.print("Podaj elementy 2 tablicy oddzielając je spacją: ");
+        String input2 = scanner.nextLine();
+        char[] tablica2 = input2.toCharArray();
 
         ArrayList<Character> wspolneElementy = znajdzWspolneElementy(tablica1, tablica2);
 
-        System.out.println("Wspólne elementy:");
+        System.out.println("Wspólne elementy tablic:");
         for (char element : wspolneElementy) {
             System.out.println(element);
         }
@@ -31,5 +39,4 @@ public class Main {
         return wspolne;
     }
 }
-
  
